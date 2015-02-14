@@ -1,0 +1,12 @@
+#productContainer
+{
+	float: left; 
+	width: 40%;
+	padding-left: 20px;
+} 
+#categoryList
+{
+	float: left;
+	list-style-type: none;
+}
+style = "float:right"

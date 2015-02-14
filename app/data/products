@@ -1,0 +1,37 @@
+[
+    {
+        "productId": 1,
+        "name": "Napellus, album",
+        "price": 20,
+        "category": "Aconitum",
+        "image": "aconitum_napellus_album.jpg"
+    },
+    {
+        "productId": 2,
+        "name": "Havana Blues",
+        "price": 25,
+        "category": "Geranium",
+        "image": "geranium_havana_blues.jpg"
+    },
+    {
+        "productId": 3,
+        "name": "Hola Guapa",
+        "price": 30,
+        "category": "Geranium",
+        "image": "geranium_hola_guapa.jpg"
+    },
+    {
+        "productId": 4,
+        "name": "Indian Summer",
+        "price": 30,
+        "category": "Helenium",
+        "image": "helenium_indian_summer.jpg"
+    },
+    {
+        "productId": 5,
+        "name": "Ruby Tuesday",
+        "price": 25,
+        "category": "Helenium",
+        "image": "helenium_ruby_tuesday.jpg"
+    }
+]

@@ -2,7 +2,7 @@
     "use strict";
 
     angular
-      .module("Main.product", [])
+      .module("app.product", [])
       .controller("productController", productController)
 
     function productController($scope, $http)
