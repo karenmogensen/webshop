@@ -5,24 +5,29 @@
       .module("app.product", [])
       .controller("productController", productController)
 
-    function productController($scope, $http)
+    function productController($scope, productService, cartService)
     {
       $scope.categoriesSelected = new Array();
-      var getProducts = function(response)
+      var modelProducts = function(data)
       {
-        $scope.products = response.data;
+        $scope.products = data;
       }
 
-      $http.get("data/products")
-        .then(getProducts);
-
-      var getCategories = function(response)
+      var modelCategories = function(data)
       {
-        $scope.categories = response.data;
+        $scope.categories = data;
       }
 
-      $http.get("data/categories")
-        .then(getCategories);
+      $scope.addProdToCart = function(product){
+        var quantity = this.quantity;
+        cartService.addProductToCart(product, quantity); 
+      }
+
+      productService.getProducts()
+        .then(modelProducts);
+
+      productService.getProducts()
+        .then(modelCategories);
 
       $scope.categoryChanged = function(category){
         var i = $scope.categoriesSelected.indexOf(category);

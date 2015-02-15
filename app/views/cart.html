@@ -1,7 +1,13 @@
-<div id="cartContainter" ng-controller="cartController">
+<div id="cartContainter" ng-controller="cartController" ng-show="showCartSection()">
     <h1>Cart</h1>
     <div id="cartSection">
         <table id="cartTable"class="table table-bordered table-stribed">
+        	<tr><th>Product</th><th>Quantity</th></tr>
+        	<tr ng-repeat="cartProduct in cartProducts">
+        		<td>{{cartProduct.product.name}}</td>
+        		<td>{{cartProduct.quantity}}</td>
+        		<td></td>
+        	</tr>
         </table>
     </div><!--cartSection-->
 </div><!--cartContainer-->

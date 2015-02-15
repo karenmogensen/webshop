@@ -17,3 +17,7 @@ app.directive('cartsection', [function () {
     		controller: 'cartController'
     	};
 }])
+
+app.run(['$rootScope', function ($rootScope) {
+	$rootScope.cartProducts = {};	
+}])
