@@ -11,7 +11,7 @@
         <div id="productSearchSection">
     		<input type="search" placeholder="Search product name" ng-model="products.name">
         </div><!--productSearchSection-->
-    <div><!--searchSection-->
+    </div><!--searchSection-->
     <div id="productsSection">
         <table id="productsTable" class="table table-bordered table-striped">
             <th>Image</th>
@@ -19,12 +19,12 @@
             <th>Price</th>
             <th></th>
             <tr ng-repeat="product in products | filter:products.name | filter:categoryFilter">
-                <td><img href="http://localhost:1234/webshop/app/data/images/{{ product.image }}"/></td>
-                <td>{{ product.name }}</td>
+                <td><img ng-src="data/img/{{product.image}}"/></td>
+                <td><a ng-href="index.html#/product/{{product.productId}}">{{ product.name }}</a></td>
                 <td>{{ product.price }}</td>
                 <td>
                     <form ng-submit="addProdToCart(product)">
-                        <input type="number" ng-model="quantity" min="0">
+                        <input type="number" ng-model="quantity" min="0" placeholder="0">
                         <button type="submit">Add to cart</button> 
                     </form>
                 </td>

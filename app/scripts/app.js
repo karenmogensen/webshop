@@ -1,12 +1,21 @@
 "use strict";
 
-var app = angular.module('app', ['ngRoute', 'app.product', 'app.cart']);
+var app = angular.module('app', ['ngRoute', 'app.products', 'app.cart', 'app.product']);
 
 app.config(['$routeProvider', function ($routeProvider) {
-	$routeProvider.when('/', {
+	$routeProvider
+    .when('/', {
 		templateUrl: 'views/products.html',
-		controller: 'productController'
+		controller: 'productsController'
 	})
+    .when('/product/:prodId', {
+        templateUrl: 'views/product.html',
+        controller: 'productController'
+    })
+    .when('/checkOut', {
+        templateUrl: 'views/checkOut.html',
+        controller: 'cartController'
+    })    
 }])
 
 app.directive('cartsection', [function () {
@@ -16,8 +25,4 @@ app.directive('cartsection', [function () {
     		templateUrl: 'views/cart.html',
     		controller: 'cartController'
     	};
-}])
-
-app.run(['$rootScope', function ($rootScope) {
-	$rootScope.cartProducts = {};	
 }])

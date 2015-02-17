@@ -1,7 +1,7 @@
 (function(){
 	"use strict";
 
-	var productService = function($http){
+	var productService = function($http, $filter){
 
 		var getProducts = function(){
 			return $http.get('data/products')
@@ -17,7 +17,24 @@
 				})
 		}
 
+		var getProduct = function(prodId){
+			return $http.get('data/products')
+				.then( function(response){
+					return filterProducts(response.data, prodId);
+				})
+		}
+
+		var filterProducts = function(data, prodId){
+			for(var i = 0; i < data.length; i += 1){
+		    	var product = data[i];
+    			if(product.productId == prodId){
+        			return product;
+    			}
+			}
+		}
+
 		return {
+			getProduct : getProduct,
 			getProducts: getProducts,
 			getCategories: getCategories
 		}
