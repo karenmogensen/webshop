@@ -10,7 +10,9 @@
                 <td>{{cartProduct.price * cartProduct. quantity | currency}}</td>
         		<td><button ng-click="removeProductFromCart($index)">Remove</button></td>
         	</tr>
-            <tr>{{ cartTotal }}</tr>
+        </table>
+        <table id="cartTableTotal" class="table table-bordered table-stribed">
+            <tr><td>Sum</td><td>{{ cartTotal | currency }}<td></tr>            
         </table>
         <button ng-click="checkOut()">Order</button>
     </div><!--cartSection-->
